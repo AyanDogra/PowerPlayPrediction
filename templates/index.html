@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+  </head>
+    <style>
+        
+    </style>
+  <body >
+
+
+    <form action="/predict" method="post">
+        <input type="text" name="batTeamForm" id="batTeamForm">
+        <input type="text" name="bowlTeamForm" id="bowlTeamForm">
+        <input type="text" name="inningsForm" id="inningsForm">
+        <input type="text" name="venueForm" id="venueForm">
+        <input type="text" name="bat_multiselect" id="bat_multiselect" type="button" multiple>
+        <input type="text" name='bowl_multiselect'  id="bowl_multiselect" type="button" multiple>
+        <!-- <select name='bat_multiselect' id="bat_multiselect" type="button" multiple>
+          <option name='abdevilliers' value="abdevilliers">AB Devilliers</option> 
+          <option value="abdulsamad">Abdulsamad</option>
+          <option value="abhisheksharma">Abhishek Sharma</option>
+          <option value="adhales">AD Hales</option>
+          <option value="adrussel">AD Russel</option>
+          <option value="ajfinch">AJ Finch</option>
+          <option value="amrahane">AM Rahane</option>
+          <option value="asroy">AS Roy</option>
+          <option value="atrayudu">AT Rayudu</option>
+          <option value="bastokes">Bastokes</option>
+          <option value="caingram">CA Ingram</option>
+          <option value="calynn">CA Lynn</option>
+          <option value="capujara">CA Pujara</option>
+          <option value="chgayle">CH Gayle</option>
+          <option value="crbrathwait">CR Brathwait</option>
+          <option value="cmunro">CM Unro</option>
+          <option value="damiller">DA Miller</option>
+          <option value="dawarner">DA Warner</option>
+          <option value="dhyagnik">DH Yagnik</option>
+          <option value="djhood">DJ Hood</option>
+          <option value="dpadikkal">DP Adikkal</option>
+          <option value="ejgmorgan">EJG Morgan</option>
+          <option value="fduplessis">FD Uplessis</option>
+          <option value="ghvihari">GH Vihari</option>
+          <option value="gjmaxwell">GJ Maxwell</option>
+          <option value="gurkeeratsingh">Gurkeerat Singh</option>
+          <option value="ishankishan">Ishan Kishan</option>
+          <option value="jcbuttler">JC Buttler</option>
+          <option value="jjroy">JJ Roy</option>
+          <option value="jsuchith">JS Uchith</option>
+          <option value="kapollard">KA POllard</option>
+          <option value="kdkarthik">KD Karthik</option>
+          <option value="kknair">KK Nair</option>
+          <option value="klrahul">KL Rahul</option>
+          <option value="kmjadhav">KM Jadhav</option>
+          <option value="kswilliamson">KS Williamson</option>
+          <option value="lslivingstone">LS Livingstone</option>
+          <option value="maagarwal">MA Aggarwal</option>
+          <option value="mandeepsingh">Mandeepsingh</option>
+          <option value="mkpandey">MK Pandey</option>
+          <option value="mmali">MM Ali</option>
+          <option value="mpstoinis">MP Stonis</option>
+          <option value="msdhoni">MS Dhoni</option>
+          <option value="npooran">N Pooran</option>
+          <option value="nrana">N Rana</option>
+          <option value="nsnaik">NS Naik</option>
+          <option value="pkgarg">PK Garg</option>
+          <option value="qdekock">QD Ekok</option>
+          <option value="ratripath">RA Tripathi</option>
+          <option value="rdgaikwad">RD Gaikwad</option>
+          <option value="rgsharma">RG Sharma</option>
+          <option value="rmpatidar">RM Patidar</option>
+          <option value="rparag">R Parag</option>
+          <option value="rrpant">RR Pant</option>
+          <option value="rsharma">R Sharma</option>
+          <option value="rvuthappa">RV Uthappa</option>
+          <option value="sachinbaby">Sachin Baby</option>
+          <option value="sdhawan">S Dhawan</option>
+          <option value="sayadav">SA Yadav</option>
+          <option value="semarsh">SE Marsh</option>
+          <option value="serutherford">SE Rutherford</option>
+          <option value="shubmangill">Shubman Gill</option>
+          <option value="skraina">SK Raina</option>
+          <option value="snkhan">SN Khan</option>
+          <option value="sohetmyer">SO Hetmyer</option>
+          <option value="spdsmith">SPD Smith</option>  
+          <option value="ssiyer">SS Iyer</option>
+          <option value="tbanton">T Banton</option>
+          <option value="tmhead">TM Head</option>
+          <option value="vkohli">V Kohli</option>
+          <option value="wpsaha">WP Saha</option>
+          <option value="ybkjaiswal">YBK Jaiswal</option> -->
+       <!--  </select>
+        <select name='bowl_multiselect'  id="bowl_multiselect" type="button" multiple>
+          <option value="asingh">A Singh</option>
+          <option value="ajturner">AJ Turner</option>
+          <option value="ajtye">AJ Tye</option>
+          <option value="amishra">A Mishra</option>
+          <option value="ankitsharma">Ankit Sharma</option>
+          <option value="anortje">AN Ortje</option>
+          <option value="arpatel">AR Patel</option>
+          <option value="arshdeepsingh">Arshdeep Singh</option>
+          <option value="asrajpoot">AS Rajput</option>
+          <option value="aveshkhan">Aves Khan</option>
+          <option value="azampa">AZ Ampa</option>
+          <option value="basilthampi">Basil Thampi</option>
+          <option value="bcjcutting">BCJ Cutting</option>
+          <option value="bkumar">B Kumar</option>
+          <option value="cdegrandhomme">CDE GrandHomme</option>
+          <option value="chmorris">CH Morris</option>
+          <option value="cjjordan">CJ Jordan</option>
+          <option value="crwoakes">CR Woakes</option>
+          <option value="cvvarun">CV Varun</option>
+          <option value="djbravo">DJ Bravo</option>
+          <option value="dlchahar">DL Chahar</option>
+          <option value="dmbravo">DM Bravo</option>
+          <option value="drsams">DR Sams</option>
+          <option value="dskulkarni">DS Kulkarni</option>
+          <option value="dtchristian">DT Christian</option>
+          <option value="dwsteyn">DW Steyn</option>
+          <option value="ferguson">Ferguson</option>
+          <option value="harpreetbrar">Harpreetbrar</option>
+          <option value="hhpandya">HH Pandya</option>
+          <option value="imarantahir">Imarantahir</option>
+          <option value="isharma">I Sharma</option>
+          <option value="issodhi">IS Sodhi</option>
+          <option value="jcarcher">JC Archer</option>
+          <option value="jdsneesham">JD Sneesham</option>
+          <option value="jdunadkat">JD Unadkat</option>
+          <option value="joholder">JO Holder</option>
+          <option value="jrhazelwood">JR Hazelwood</option>
+          <option value="jyadav">J Yadav</option>
+          <option value="kajamieson">KA Jamieson</option>
+          <option value="kartiktyagi">Kartik Tyagi</option>
+          <option value="kgowtham">K Gowtham</option>
+          <option value="khpandya">KH Pandya</option>
+          <option value="krabada">K Rabada</option>
+          <option value="kvsharma">KV Sharma</option>
+          <option value="kwrichardson">KW Richardson</option>
+          <option value="kuldeepyadav">Kuldeep Yadav</option>
+          <option value="lhferguson">LH Ferguson</option>
+          <option value="lngidi">Ingidi</option>
+          <option value="mashwin">Mashwin</option>
+          <option value="mchenriques">MC Henriques</option>
+          <option value="mdmishra">MD Mishra</option>
+          <option value="mjansen">M Jansen</option>
+          <option value="mjmcclenaghan">MJMC Clenaghan</option>
+          <option value="mjsantner">MJ Santner</option>
+          <option value="mmarkande">M Markande</option>
+          <option value="mohammednabi">Mohammed Nabi</option>
+          <option value="mohammedsiraj">Mohammed Siraj</option>
+          <option value="mprasidhkrishna">MPrasidh Krishna</option>
+          <option value="mrmarsh">MR Marsh</option>
+          <option value="mujeeburrahman">MU Jeebur Rehman</option>
+          <option value="nagarkoti">Nagar Koti</option>
+          <option value="nasaini">NA Saini</option>
+          <option value="pjcummins">PJ Cummins</option>
+          <option value="pnegi">P Negi</option>
+          <option value="ppchawla">PP Chawla</option>
+          <option value="rajadeja">RA Jadeja</option>
+          <option value="rashwin">R ashwin</option>
+          <option value="rdchahar">RD Chahar</option>
+          <option value="rtewatia">R Tewatia</option>
+          <option value="sandeepsharma">Sandeep Sharma</option>
+          <option value="shahbazahmed">Shahbaz Ahmed</option>
+          <option value="shakibalhasan">Shaki Bal Hasan</option>
+          <option value="shivammavi'">Shivam Mavi'</option>
+          <option value="skaul">S Kaul</option>
+          <option value="slamichhane">S Lamichhane</option>
+          <option value="smcurran">SM Curran</option>
+          <option value="snadeem">S Nadeem</option>
+          <option value="snthakur">SN Thakur</option>
+          <option value="spnarine">SP Narine</option>
+          <option value="yschahal">YS Chahal</option>
+          <option value="styagi">S Tyagi</option>
+          <option value="taboult">TA Boult</option>
+          <option value="tgsouthee">TG Southee</option>
+          <option value="tkcurran'">TK Curran'</option>
+          <option value="tnatarajan">T Natarajan</option>
+          <option value="tshamsi">T Shamsi</option>
+          <option value="utyadv">UT Yadv</option>
+          <option value="vshankar">V Shankar</option>
+          <option value="washigtonsundar">Washigton Sundar</option>
+        </select> -->
+        <input type="submit">
+    </form>
+    <!-- <button onclick="location.href='home'">Reset</button> -->
+    <div class='container'>
+              <h1>IPL Predictions:</h1>
+        <label id='bat' for="pclass"><strong>BATTING TEAM:</strong></label>
+
+        <div id='batTeam'>
+            <div value="51.949438"><img src="static/images/csk.png"><p>Chennai Super Kings</p></div>
+            <div value="54.032258"><img src="static/images/srh.png"><p>Sunrisers Hyderabad</p></div>
+            <div value="52.901042"><img src="static/images/kkr.png"><p>Kolkata Knight Riders</p></div>
+            <div value="50.902564"><img src="static/images/rcb.png"><p>Royal Challengers Bangalore</p></div>
+            <div value="53.857143"><img src="static/images/kxip.png"><p>Punjab Kings</p></div>
+            <div value="52.706250"><img src="static/images/dc.png"><p>Delhi Capitals</p></div>
+            <div value="51.610837"><img src="static/images/mi.png"><p>Mumbai Indians</p></div>
+            <div value="51.490566"><img src="static/images/rr.png"><p>Rajasthan Royals</p></div>
+        </div>
+
+        <br>
+
+        <label for="pclass"><strong>BOWLING TEAM:</strong></label>
+        <div id='bowlTeam'>
+            <div value="52.792135"><img src="static/images/csk.png"><p>Chennai Super Kings</p></div>
+            <div value="51.185484"><img src="static/images/srh.png"><p>Sunrisers Hyderabad</p></div>
+            <div value="52.760417"><img src="static/images/kkr.png"><p>Kolkata Knight Riders</p></div>
+            <div value="50.902564"><img src="static/images/rcb.png"><p>Royal Challengers Bangalore</p></div>
+            <div value="54.687831"><img src="static/images/kxip.png"><p>Punjab Kings</p></div>
+            <div value="53.509434"><img src="static/images/dc.png"><p>Delhi Capitals</p></div>
+            <div value="50.487685"><img src="static/images/mi.png"><p>Mumbai Indians</p></div>
+            <div value="52.400000"><img src="static/images/rr.png"><p>Rajasthan Royals</p></div>
+        </div> 
+
+         <br>
+
+        <label for="pclass"><strong>INNINGS:</strong></label>
+        <div id='innings'>
+          <div value="1.0"><img src="static/images/1.png"><p>1<sup>st</sup> Innings</p></div>
+          <div value="2.0"><img src="static/images/2.png"><p>2<sup>nd</sup> Innings</p></div>
+        </div>
+
+        <br>
+
+        <label for="pclass"><strong>VENUE:</strong></label>
+        <div id="venue">
+          <div class='b2' value="52.865942"><img src="static/images/chidambaram.png"><p>MA Chidambaram</p></div>
+          <div class='b2' value="52.122449"><img src="static/images/wankhede.png"><p>Wankhede Stadium</p></div>
+          <div class='b2' value="54.101695"><img src="static/images/feroz.png"><p>Feroz Shah Kotla</p></div>
+          <div class='b2' value="52.901961"><img src="static/images/eden.png"><p>Eden Gardens</p></div>
+          <div class='b2' value="54.826087"><img src="static/images/patel.png"><p>Sardar Patel Stadium</p></div>
+        </div>
+        <br>
+
+        <label for="pclass"><strong>BATSMEN:</strong></label>
+        <div id="batsman" class='bat'>
+          <div name="abdevilliers" value="abdevilliers"><img src="static/images/abdevilliers.png"><p>AB Devilliers</p></div> 
+          <div value="abdulsamad"><img src="static/images/abdulsamad.png"><p>Abdulsamad</p></div>
+          <div value="abhisheksharma"><img src="static/images/abhisheksharma.png"><p>Abhishek Sharma</p></div>
+          <div value="adhales"><img src="static/images/adhales.png"><p>AD Hales</p></div>
+          <div value="adrussel"><img src="static/images/adrussel.png"><p>AD Russel</p></div>
+          <div value="ajfinch"><img src="static/images/ajfinch.png"><p>AJ Finch</p></div>
+          <div value="amrahane"><img src="static/images/amrahane.png"><p>AM Rahane</p></div>
+          <div value="asroy"><img src="static/images/asroy.png"><p>AS Roy</p></div>
+          <div value="atrayudu"><img src="static/images/atrayudu.png"><p>AT Rayudu</p></div>
+          <div value="bastokes"><img src="static/images/bastokes.png"><p>Bastokes</p></div>
+          <div value="caingram"><img src="static/images/caingram.png"><p>CA Ingram</p></div>
+          <div value="calynn"><img src="static/images/calynn.png"><p>CA Lynn</p></div>
+          <div value="capujara"><img src="static/images/capujara.png"><p>CA Pujara</p></div>
+          <div value="chgayle"><img src="static/images/chgayle.png"><p>CH Gayle</p></div>
+          <div value="crbrathwait"><img src="static/images/crbrathwait.png"><p>CR Brathwait</p></div>
+          <div value="cmunro"><img src="static/images/cmunro.png"><p>CM Unro</p></div>
+          <div value="damiller"><img src="static/images/damiller.png"><p>DA Miller</p></div>
+          <div value="dawarner"><img src="static/images/dawarner.png"><p>DA Warner</p></div>
+          <div value="dhyagnik"><img src="static/images/dhyagnik.png"><p>DH Yagnik</p></div>
+          <div value="djhood"><img src="static/images/djhood.png"><p>DJ Hood</p></div>
+          <div value="dpadikkal"><img src="static/images/dpadikkal.png"><p>DP Adikkal</p></div>
+          <div value="ejgmorgan"><img src="static/images/ejgmorgan.png"><p>EJG Morgan</p></div>
+          <div value="fduplessis"><img src="static/images/fduplessis.png"><p>FD Uplessis</p></div>
+          <div value="ghvihari"><img src="static/images/ghvihari.png"><p>GH Vihari</p></div>
+          <div value="gjmaxwell"><img src="static/images/gjmaxwell.png"><p>GJ Maxwell</p></div>
+          <div value="gurkeeratsingh"><img src="static/images/gurkeeratsingh.png"><p>Gurkeerat Singh</p></div>
+          <div value="ishankishan"><img src="static/images/ishankishan.png"><p>Ishan Kishan</p></div>
+          <div value="jcbuttler"><img src="static/images/jcbuttler.png"><p>JC Buttler</p></div>
+          <div value="jjroy"><img src="static/images/jjroy.png"><p>JJ Roy</p></div>
+          <div value="jsuchith"><img src="static/images/jsuchith.png"><p>JS Uchith</p></div>
+          <div value="kapollard"><img src="static/images/kapollard.png"><p>KA POllard</p></div>
+          <div value="kdkarthik"><img src="static/images/kdkarthik.png"><p>KD Karthik</p></div>
+          <div value="kknair"><img src="static/images/kknair.png"><p>KK Nair</p></div>
+          <div value="klrahul"><img src="static/images/klrahul.png"><p>KL Rahul</p></div>
+          <div value="kmjadhav"><img src="static/images/kmjadhav.png"><p>KM Jadhav</p></div>
+          <div value="kswilliamson"><img src="static/images/kswilliamson.png"><p>KS Williamson</p></div>
+          <div value="lslivingstone"><img src="static/images/lslivingstone.png"><p>LS Livingstone</p></div>
+          <div value="maagarwal"><img src="static/images/maagarwal.png"><p>MA Aggarwal</p></div>
+          <div value="mandeepsingh"><img src="static/images/mandeepsingh.png"><p>Mandeepsingh</p></div>
+          <div value="mkpandey"><img src="static/images/mkpandey.png"><p>MK Pandey</p></div>
+          <div value="mmali"><img src="static/images/mmali.png"><p>MM Ali</p></div>
+          <div value="mpstoinis"><img src="static/images/mpstoinis.png"><p>MP Stonis</p></div>
+          <div value="msdhoni"><img src="static/images/msdhoni.png"><p>MS Dhoni</p></div>
+          <div value="npooran"><img src="static/images/npooran.png"><p>N Pooran</p></div>
+          <div value="nrana"><img src="static/images/nrana.png"><p>N Rana</p></div>
+          <div value="nsnaik"><img src="static/images/nsnaik.png"><p>NS Naik</p></div>
+          <div value="pkgarg"><img src="static/images/pkgarg.png"><p>PK Garg</p></div>
+          <div value="qdekock"><img src="static/images/qdekock.png"><p>QD Ekok</p></div>
+          <div value="ratripath"><img src="static/images/ratripath.png"><p>RA Tripathi</p></div>
+          <div value="rdgaikwad"><img src="static/images/rdgaikwad.png"><p>RD Gaikwad</p></div>
+          <div value="rgsharma"><img src="static/images/rgsharma.png"><p>RG Sharma</p></div>
+          <div value="rmpatidar"><img src="static/images/rmpatidar.png"><p>RM Patidar</p></div>
+          <div value="rparag"><img src="static/images/rparag.png"><p>R Parag</p></div>
+          <div value="rrpant"><img src="static/images/rrpant.png"><p>RR Pant</p></div>
+          <div value="rsharma"><img src="static/images/rsharma.png"><p>R Sharma</p></div>
+          <div value="rvuthappa"><img src="static/images/rvuthappa.png"><p>RV Uthappa</p></div>
+          <div value="sachinbaby"><img src="static/images/sachinbaby.png"><p>Sachin Baby</p></div>
+          <div value="sdhawan"><img src="static/images/sdhawan.png"><p>S Dhawan</p></div>
+          <div value="sayadav"><img src="static/images/sayadav.png"><p>SA Yadav</p></div>
+          <div value="semarsh"><img src="static/images/semarsh.png"><p>SE Marsh</p></div>
+          <div value="serutherford"><img src="static/images/serutherford.png"><p>SE Rutherford</p></div>
+          <div value="shubmangill"><img src="static/images/shubmangill.png"><p>Shubman Gill</p></div>
+          <div value="skraina"><img src="static/images/skraina.png"><p>SK Raina</p></div>
+          <div value="snkhan"><img src="static/images/snkhan.png"><p>SN Khan</p></div>
+          <div value="sohetmyer"><img src="static/images/sohetmyer.png"><p>SO Hetmyer</p></div>
+          <div value="spdsmith"><img src="static/images/spdsmith.png"><p>SPD Smith</</p></div>  
+          <div value="ssiyer"><img src="static/images/ssiyer.png"><p>SS Iyer</p></div>
+          <div value="tbanton"><img src="static/images/tbanton.png"><p>T Banton</p></div>
+          <div value="tmhead"><img src="static/images/tmhead.png"><p>TM Head</p></div>
+          <div value="vkohli"><img src="static/images/vkohli.png"><p>V Kohli</p></div>
+          <div value="wpsaha"><img src="static/images/wpsaha.png"><p>WP Saha</p></div>
+          <div value="ybkjaiswal"><img src="static/images/ybkjaiswal.png"><p>YBK Jaiswal</p></div>
+        </div>
+        <button id="bat_complete">Completed</button>
+        <br>
+
+        <label for="pclass"><strong>BOWLERS:</strong></label>
+        <div id="bowlers">
+          <!-- <div value="asingh"><img src="static/images/asingh.png"><p>A Singh</p></div> -->
+          <div value="ajturner"><img src="static/images/ajturner.png"><p>AJ Turner</p></div>
+          <div value="ajtye"><img src="static/images/ajtye.png"><p>AJ Tye</p></div>
+          <div value="amishra"><img src="static/images/amishra.png"><p>A Mishra</p></div>
+          <div value="ankitsharma"><img src="static/images/ankitsharma.png"><p>Ankit Sharma</p></div>
+          <div value="anortje"><img src="static/images/anortje.png"><p>AN Ortje</p></div>
+          <div value="arpatel"><img src="static/images/arpatel.png"><p>AR Patel</p></div>
+          <div value="arshdeepsingh"><img src="static/images/arshdeepsingh.png"><p>Arshdeep Singh</p></div>
+          <div value="asrajpoot"><img src="static/images/asrajpoot.png"><p>AS Rajput</p></div>
+          <div value="aveshkhan"><img src="static/images/aveshkhan.png"><p>Aves Khan</p></div>
+          <div value="azampa"><img src="static/images/azampa.png"><p>AZ Ampa</p></div>
+          <div value="basilthampi"><img src="static/images/basilthampi.png"><p>Basil Thampi</p></div>
+          <div value="bcjcutting"><img src="static/images/bcjcutting.png"><p>BCJ Cutting</p></div>
+          <div value="bkumar"><img src="static/images/bkumar.png"><p>B Kumar</p></div>
+          <div value="cdegrandhomme"><img src="static/images/cdegrandhomme.png"><p>CDE GrandHomme</p></div>
+          <div value="chmorris"><img src="static/images/chmorris.png"><p>CH Morris</p></div>
+          <div value="cjjordan"><img src="static/images/cjjordan.png"><p>CJ Jordan</p></div>
+          <div value="crwoakes"><img src="static/images/crwoakes.png"><p>CR Woakes</p></div>
+          <div value="cvvarun"><img src="static/images/cvvarun.png"><p>CV Varun</p></div>
+          <div value="djbravo"><img src="static/images/djbravo.png"><p>DJ Bravo</p></div>
+          <div value="dlchahar"><img src="static/images/dlchahar.png"><p>DL Chahar</p></div>
+          <div value="dmbravo"><img src="static/images/dmbravo.png"><p>DM Bravo</p></div>
+          <div value="drsams"><img src="static/images/drsams.png"><p>DR Sams</p></div>
+          <div value="dskulkarni"><img src="static/images/dskulkarni.png"><p>DS Kulkarni</p></div>
+          <div value="dtchristian"><img src="static/images/dtchristian.png"><p>DT Christian</p></div>
+          <div value="dwsteyn"><img src="static/images/dwsteyn.png"><p>DW Steyn</p></div>
+          <div value="ferguson"><img src="static/images/ferguson.png"><p>Ferguson</p></div>
+          <div value="harpreetbrar"><img src="static/images/harpreetbrar.png"><p>Harpreetbrar</p></div>
+          <div value="hhpandya"><img src="static/images/hhpandya.png"><p>HH Pandya</p></div>
+          <div value="imarantahir"><img src="static/images/imarantahir.png"><p>Imarantahir</p></div>
+          <div value="isharma"><img src="static/images/isharma.png"><p>I Sharma</p></div>
+          <div value="issodhi"><img src="static/images/issodhi.png"><p>IS Sodhi</p></div>
+          <div value="jcarcher"><img src="static/images/jcarcher.png"><p>JC Archer</p></div>
+          <div value="jdsneesham"><img src="static/images/jdsneesham.png"><p>JD Sneesham</p></div>
+          <div value="jdunadkat"><img src="static/images/jdunadkat.png"><p>JD Unadkat</p></div>
+          <div value="joholder"><img src="static/images/joholder.png"><p>JO Holder</p></div>
+          <div value="jrhazelwood"><img src="static/images/jrhazelwood.png"><p>JR Hazelwood</p></div>
+          <div value="jyadav"><img src="static/images/jyadav.png"><p>J Yadav</p></div>
+          <div value="kajamieson"><img src="static/images/kajamieson.png"><p>KA Jamieson</p></div>
+          <div value="kartiktyagi"><img src="static/images/kartiktyagi.png"><p>Kartik Tyagi</p></div>
+          <div value="kgowtham"><img src="static/images/kgowtham.png"><p>K Gowtham</p></div>
+          <div value="khpandya"><img src="static/images/khpandya.png"><p>KH Pandya</p></div>
+          <div value="krabada"><img src="static/images/krabada.png"><p>K Rabada</p></div>
+          <div value="kvsharma"><img src="static/images/kvsharma.png"><p>KV Sharma</p></div>
+          <div value="kwrichardson"><img src="static/images/kwrichardson.png"><p>KW Richardson</p></div>
+          <div value="kuldeepyadav"><img src="static/images/kuldeepyadav.png"><p>Kuldeep Yadav</p></div>
+          <div value="lhferguson"><img src="static/images/lhferguson.png"><p>LH Ferguson</p></div>
+          <div value="lngidi"><img src="static/images/lngidi.png"><p>Ingidi</p></div>
+          <div value="mashwin"><img src="static/images/mashwin.png"><p>Mashwin</p></div>
+          <div value="mchenriques"><img src="static/images/mchenriques.png"><p>MC Henriques</p></div>
+          <div value="mdmishra"><img src="static/images/mdmishra.png"><p>MD Mishra</p></div>
+          <div value="mjansen"><img src="static/images/mjansen.png"><p>M Jansen</p></div>
+          <div value="mjmcclenaghan"><img src="static/images/mjmcclenaghan.png"><p>MJMC Clenaghan</p></div>
+          <div value="mjsantner"><img src="static/images/mjsantner.png"><p>MJ Santner</p></div>
+          <div value="mmarkande"><img src="static/images/mmarkande.png"><p>M Markande</p></div>
+          <div value="mohammednabi"><img src="static/images/mohammednabi.png"><p>Mohammed Nabi</p></div>
+          <div value="mohammedsiraj"><img src="static/images/mohammedsiraj.png"><p>Mohammed Siraj</p></div>
+          <div value="mprasidhkrishna"><img src="static/images/mprasidhkrishna.png"><p>MPrasidh Krishna</p></div>
+          <div value="mrmarsh"><img src="static/images/mrmarsh.png"><p>MR Marsh</p></div>
+          <div value="mujeeburrahman"><img src="static/images/mujeeburrahman.png"><p>MU Jeebur Rehman</p></div>
+          <div value="nagarkoti"><img src="static/images/nagarkoti.png"><p>Nagar Koti</p></div>
+          <div value="nasaini"><img src="static/images/nasaini.png"><p>NA Saini</p></div>
+          <div value="pjcummins"><img src="static/images/pjcummins.png"><p>PJ Cummins</p></div>
+          <div value="pnegi"><img src="static/images/pnegi.png"><p>P Negi</p></div>
+          <div value="ppchawla"><img src="static/images/ppchawla.png"><p>PP Chawla</p></div>
+          <div value="rajadeja"><img src="static/images/rajadeja.png"><p>RA Jadeja</p></div>
+          <div value="rashwin"><img src="static/images/rashwin.png"><p>R ashwin</p></div>
+          <div value="rdchahar"><img src="static/images/rdchahar.png"><p>RD Chahar</p></div>
+          <div value="rtewatia"><img src="static/images/rtewatia.png"><p>R Tewatia</p></div>
+          <div value="sandeepsharma"><img src="static/images/sandeepsharma.png"><p>Sandeep Sharma</p></div>
+          <div value="shahbazahmed"><img src="static/images/shahbazahmed.png"><p>Shahbaz Ahmed</p></div>
+          <div value="shakibalhasan"><img src="static/images/shakibalhasan.png"><p>Shaki Bal Hasan</p></div>
+          <div value="shivammavi'"><img src="static/images/shivammavi'.png"><p>Shivam Mavi'</p></div>
+          <div value="skaul"><img src="static/images/skaul.png"><p>S Kaul</p></div>
+          <div value="slamichhane"><img src="static/images/slamichhane.png"><p>S Lamichhane</p></div>
+          <div value="smcurran"><img src="static/images/smcurran.png"><p>SM Curran</p></div>
+          <div value="snadeem"><img src="static/images/snadeem.png"><p>S Nadeem</p></div>
+          <div value="snthakur"><img src="static/images/snthakur.png"><p>SN Thakur</p></div>
+          <div value="spnarine"><img src="static/images/spnarine.png"><p>SP Narine</p></div>
+          <div value="yschahal"><img src="static/images/yschahal.png"><p>YS Chahal</p></div>
+          <div value="styagi"><img src="static/images/styagi.png"><p>S Tyagi</p></div>
+          <div value="taboult"><img src="static/images/taboult.png"><p>TA Boult</p></div>
+          <div value="tgsouthee"><img src="static/images/tgsouthee.png"><p>TG Southee</p></div>
+          <div value="tkcurran'"><img src="static/images/tkcurran'.png"><p>TK Curran'</p></div>
+          <div value="tnatarajan"><img src="static/images/tnatarajan.png"><p>T Natarajan</p></div>
+          <div value="tshamsi"><img src="static/images/tshamsi.png"><p>T Shamsi</p></div>
+          <div value="utyadv"><img src="static/images/utyadv.png"><p>UT Yadv</p></div>
+          <div value="vshankar"><img src="static/images/vshankar.png"><p>V Shankar</p></div>
+          <div value="washigtonsundar"><img src="static/images/washigtonsundar.png"><p>Washigton Sundar</p></div>
+        </div>
+        <button id="bowl_complete">Completed</button>
+        <br>
+
+        <div>
+            <button id="predict" type="submit" class='btn btn-success btn-block btn-large'>Predict</button>
+        </div>
+        
+      <!-- </form> -->
+      <br>
+      <br>
+        <h2>
+          <strong>
+            {{prediction_text}}
+          </strong>
+        </h2> 
+    </div>
+    </div>
+
+  </body>
+</html>

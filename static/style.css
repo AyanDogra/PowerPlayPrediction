@@ -1,0 +1,118 @@
+body{
+         /*background-image: url('../static/images/ipl.jpeg');*/
+         height: 75%;
+         background-position: left;
+         background-repeat: no-repeat;
+         background-size: 500px 300px;
+    }
+#innings{
+    display: none;
+    max-width: 50%;
+    /*align-self: center;*/
+}
+#venue{display: none;}
+#bowlers{display:none;}
+img {
+    /*float: left;*/
+    width:  150px;
+    height: 150px;
+    /*object-fit: cover;*/
+}
+/*#kkr{
+    width: 100px;
+    height: 100px;
+}*/
+.card{
+    width: 50px;
+    height: 250px;
+}
+.row {
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  /*flex: 25%;*/
+  max-width: 25%;
+  padding: 10 10px;
+}
+#navbar-image{
+    width : 50px;
+    height : 50px;
+}
+/*#venue-row1{
+  max-width: 33%;
+}
+#venue-row2{
+  max-width: 50%;
+}*/
+
+form{
+    /*display: none;*/
+}
+
+/*Grid layout*/
+#batTeam, #bowlTeam, #innings, #venue, #batsman,#bowlers{
+  display: none;
+  grid-template-columns: 20% 20% 20% 20%;
+  column-gap: 55px;
+  grid-row-gap: 5px;
+}
+
+#innings{grid-template-columns: 50% 50%;}
+
+#batTeam div, #bowlTeam div, #innings div,#venue div,#batsman div,#bowlers div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  transition: all 0.1s;
+}
+#venue{grid-template-columns: 50% 50%;}
+
+
+#batTeam div:hover{
+  border: 2px solid grey;
+  background: #fafafa;
+}
+#bowlTeam div:hover{
+  border: 2px solid grey;
+  background: #fafafa;
+}
+#innings div:hover{
+  border: 2px solid grey;
+  background: #fafafa;
+}
+#venue div:hover{
+  border: 2px solid grey;
+  background: #fafafa;
+}
+#batsman div:hover,#batsman div.bat{
+  border: 2px solid grey;
+  background: #fafafa;
+}
+#bowlers div:hover,#bowler div.bat{
+  border: 2px solid grey;
+  background: #fafafa;
+}
+.bat{
+  border: 2px solid grey;
+  background: #fafafa;
+}
+
+#batTeam p, #bowlTeam p, #innings p,#venue p{
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
